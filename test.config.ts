@@ -1,6 +1,6 @@
 export class TestConfig {
-    appUrl = "http://localhost/opencart/upload/"
-    //appUrl = "https://demo.opencart.com/"
+    //appUrl = "http://localhost/opencart/upload/"
+    appUrl = "https://demo.opencart.com/"
     //valid login credentials- create your own login account
     email = "vuknedeljkovic@123.com"
     password = "Test@123"
