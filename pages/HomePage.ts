@@ -18,7 +18,7 @@ export class HomePage {
         this.page = page;
         this.txtSearchInput = page.locator("input[name='search']");
         this.btnSearchButton = page.locator(".input-group-btn");
-        this.lnkMyAccount = page.getByRole('link', { name: ' My Account' });
+        this.lnkMyAccount = page.locator('a[title="My Account"]');
         this.lnkRegister = page.getByRole('link', { name: 'Register' });
         this.lnkLogin = page.getByRole('link', { name: 'Login' });
 
