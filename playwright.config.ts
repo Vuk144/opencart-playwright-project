@@ -17,6 +17,10 @@ export default defineConfig({
   ],
 
   use: {
+    extraHTTPHeaders: 
+    {
+    "ngrok-skip-browser-warning": "true"
+    },
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
