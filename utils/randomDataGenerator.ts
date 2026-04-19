@@ -2,15 +2,15 @@ import {faker} from '@faker-js/faker';
 
 export class RandomDataUtil {
     static generateRandomEmail(): string {
-        return faker.internet.email();
+        return `test${Date.now()}@mail.com`;
     }
 
     static generateRandomPassword(): string {
-        return faker.internet.password();
+        return `Pass${Math.floor(Math.random() * 100000)}!`;
     }
 
     static generateRandomUsername(): string {
-        return faker.internet.username();
+        return `user${Date.now()}`;
     }
 
     static generateRandomFirstName(): string {
