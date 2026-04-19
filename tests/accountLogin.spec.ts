@@ -18,6 +18,7 @@ test.beforeEach(async ({page}) => {
     accountPage = new AccountPage(page);
     testConfig = new TestConfig();
 
+    await page.waitForLoadState('networkidle');
     await page.goto(testConfig.appUrl);
 });
 
