@@ -22,6 +22,7 @@ export class MyAccountPage {
      */
     async isMyAccountPageExists(): Promise<boolean> {
         try {
+            await this.page.waitForLoadState('networkidle');
             const isVisible = await this.msgHeading.isVisible();
             return isVisible;
         } catch (error) {

@@ -26,7 +26,8 @@ export class HomePage {
     }
 
     async isHomePageDisplayed(): Promise<boolean> {
-        return await this.lnkMyAccount.isVisible();
+        await this.page.waitForLoadState('networkidle');
+        return await this.txtSearchInput.isVisible();
     }
 
     async clickSearchButton() {
