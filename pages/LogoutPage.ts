@@ -8,7 +8,7 @@ export class LogoutPage {
     constructor(page: Page) {
         this.page = page;
         // Using CSS selector with :has-text() pseudo-class for text matching
-        this.btnContinue = page.locator('.btn.btn-primary');
+        this.btnContinue = page.locator('.btn-primary');
     }
 
     /**
@@ -25,6 +25,7 @@ export class LogoutPage {
      * @returns Promise<boolean> - Returns true if button is visible
      */
     async isContinueButtonVisible(): Promise<boolean> {
+        await this.page.waitForLoadState('networkidle');
         return await this.btnContinue.isVisible();
     }
 }

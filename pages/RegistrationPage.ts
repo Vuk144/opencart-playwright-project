@@ -35,7 +35,7 @@ export class RegistrationPage {
     }
     async isRegisterAccountPageDisplayed(): Promise<boolean> {
         await this.page.waitForLoadState('networkidle');
-        return await this.firstNameInput.isVisible();
+        return await this.registerAccountHeader.isVisible();
     }
 
     async enterFirstName(stringFirstName: string): Promise<void> {
@@ -64,6 +64,7 @@ export class RegistrationPage {
 
 
     async isAccountCreatedMessageDisplayed(): Promise<boolean> {
+        await this.page.waitForLoadState('networkidle');
         return await this.msgAccHasBeenCreated.isVisible();
     }
 
