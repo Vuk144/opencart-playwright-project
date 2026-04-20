@@ -126,7 +126,7 @@ async function addProductToCart(page: Page) {
     await page.waitForTimeout(3000); 
 
     // Confirm product was added
-    // expect(await productPage?.isConfirmationMessageVisible()).toBe(true);
+    expect(await productPage?.isConfirmationMessageVisible()).toBe(true);
 }
 
 
@@ -149,6 +149,5 @@ async function verifyShoppingCart(page: Page) {
 
 // Function to perform checkout (disabled for demo site)
 async function performCheckout(page: Page) {
-    // Checkout feature is not implemented since it's a demo site.
-    // Place your checkout flow logic here if backend is available.
+
 }

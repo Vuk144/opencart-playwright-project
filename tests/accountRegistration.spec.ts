@@ -23,8 +23,8 @@ test.describe("Account Registration Tests", () => {
         expect(isHomePageDisplayed).toBeTruthy();
         await homePage.clickMyAccountDropdown();
         await homePage.clickRegisterButton();
-        // const isRegistrationPageDisplayed = await registrationPage.isRegisterAccountPageDisplayed();
-        // expect(isRegistrationPageDisplayed).toBeTruthy();
+        const isRegistrationPageDisplayed = await registrationPage.isRegisterAccountPageDisplayed();
+        expect(isRegistrationPageDisplayed).toBeTruthy();
         
     });
 
