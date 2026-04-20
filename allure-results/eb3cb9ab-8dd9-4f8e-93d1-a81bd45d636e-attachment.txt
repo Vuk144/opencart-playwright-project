@@ -1,0 +1,58 @@
+Error clicking Register button: locator.click: Error: strict mode violation: locator('text=My Account') resolved to 3 elements:
+    1) <span class="hidden-xs hidden-sm hidden-md">My Account</span> aka getByRole('link', { name: ' My Account' })
+    2) <h5>My Account</h5> aka getByRole('heading', { name: 'My Account' })
+    3) <a href="http://localhost/opencart/upload/index.php?route=account/account">My Account</a> aka getByRole('link', { name: 'My Account', exact: true })
+
+Call log:
+  - waiting for locator('text=My Account')
+
+    at HomePage.clickRegisterButton (C:\Users\Nedeljko Bajic Baja\Desktop\project-playwright\pages\HomePage.ts:62:36)
+    at C:\Users\Nedeljko Bajic Baja\Desktop\project-playwright\tests\accountRegistration.spec.ts:25:24 {
+  [Symbol(step)]: {
+    location: {
+      file: 'C:\\Users\\Nedeljko Bajic Baja\\Desktop\\project-playwright\\pages\\HomePage.ts',
+      line: 62,
+      column: 36,
+      function: 'HomePage.clickRegisterButton'
+    },
+    category: 'pw:api',
+    title: "Click locator('text=My Account')",
+    apiName: 'locator.click',
+    params: { selector: 'text=My Account', strict: true, timeout: 0 },
+    group: undefined,
+    stepId: 'pw:api@39',
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@39',
+      _title: "Click locator('text=My Account')",
+      _parentStep: undefined,
+      skip: [Function (anonymous)]
+    },
+    complete: [Function: complete],
+    endWallTime: 1776623959450,
+    error: {
+      message: "Error: locator.click: Error: strict mode violation: locator('text=My Account') resolved to 3 elements:\n" +
+        `    1) <span class="hidden-xs hidden-sm hidden-md">My Account</span> aka getByRole('link', { name: ' My Account' })\n` +
+        "    2) <h5>My Account</h5> aka getByRole('heading', { name: 'My Account' })\n" +
+        `    3) <a href="http://localhost/opencart/upload/index.php?route=account/account">My Account</a> aka getByRole('link', { name: 'My Account', exact: true })\n` +
+        '\n' +
+        'Call log:\n' +
+        "\x1B[2m  - waiting for locator('text=My Account')\x1B[22m\n",
+      stack: "Error: locator.click: Error: strict mode violation: locator('text=My Account') resolved to 3 elements:\n" +
+        `    1) <span class="hidden-xs hidden-sm hidden-md">My Account</span> aka getByRole('link', { name: ' My Account' })\n` +
+        "    2) <h5>My Account</h5> aka getByRole('heading', { name: 'My Account' })\n" +
+        `    3) <a href="http://localhost/opencart/upload/index.php?route=account/account">My Account</a> aka getByRole('link', { name: 'My Account', exact: true })\n` +
+        '\n' +
+        'Call log:\n' +
+        "\x1B[2m  - waiting for locator('text=My Account')\x1B[22m\n" +
+        '\n' +
+        '    at HomePage.clickRegisterButton (C:\\Users\\Nedeljko Bajic Baja\\Desktop\\project-playwright\\pages\\HomePage.ts:62:36)\n' +
+        '    at C:\\Users\\Nedeljko Bajic Baja\\Desktop\\project-playwright\\tests\\accountRegistration.spec.ts:25:24',
+      cause: undefined
+    }
+  }
+}

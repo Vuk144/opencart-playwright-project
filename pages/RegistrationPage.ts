@@ -34,7 +34,8 @@ export class RegistrationPage {
 
     }
     async isRegisterAccountPageDisplayed(): Promise<boolean> {
-        return await this.registerAccountHeader.isVisible();
+        await this.page.waitForLoadState('networkidle');
+        return await this.firstNameInput.isVisible();
     }
 
     async enterFirstName(stringFirstName: string): Promise<void> {

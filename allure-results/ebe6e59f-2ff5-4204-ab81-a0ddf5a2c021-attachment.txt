@@ -1,0 +1,50 @@
+Error clicking My Account dropdown: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for getByRole('link', { name: ' My Account' })
+
+    at HomePage.clickMyAccountDropdown (C:\Users\Nedeljko Bajic Baja\Desktop\project-playwright\pages\HomePage.ts:52:37)
+    at C:\Users\Nedeljko Bajic Baja\Desktop\project-playwright\tests\accountRegistration.spec.ts:33:24 {
+  [Symbol(step)]: {
+    location: {
+      file: 'C:\\Users\\Nedeljko Bajic Baja\\Desktop\\project-playwright\\pages\\HomePage.ts',
+      line: 52,
+      column: 37,
+      function: 'HomePage.clickMyAccountDropdown'
+    },
+    category: 'pw:api',
+    title: "Click getByRole('link', { name: ' My Account' })",
+    apiName: 'locator.click',
+    params: {
+      selector: 'internal:role=link[name=" My Account"i]',
+      strict: true,
+      timeout: 0
+    },
+    group: undefined,
+    stepId: 'pw:api@37',
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@37',
+      _title: "Click getByRole('link', { name: ' My Account' })",
+      _parentStep: undefined,
+      skip: [Function (anonymous)]
+    },
+    complete: [Function: complete],
+    endWallTime: 1776622728675,
+    error: {
+      message: 'Error: locator.click: Target page, context or browser has been closed\n' +
+        'Call log:\n' +
+        "\x1B[2m  - waiting for getByRole('link', { name: ' My Account' })\x1B[22m\n",
+      stack: 'Error: locator.click: Target page, context or browser has been closed\n' +
+        'Call log:\n' +
+        "\x1B[2m  - waiting for getByRole('link', { name: ' My Account' })\x1B[22m\n" +
+        '\n' +
+        '    at HomePage.clickMyAccountDropdown (C:\\Users\\Nedeljko Bajic Baja\\Desktop\\project-playwright\\pages\\HomePage.ts:52:37)\n' +
+        '    at C:\\Users\\Nedeljko Bajic Baja\\Desktop\\project-playwright\\tests\\accountRegistration.spec.ts:33:24',
+      cause: undefined
+    }
+  }
+}

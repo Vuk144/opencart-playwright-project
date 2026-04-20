@@ -1,0 +1,80 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: accountLogin.spec.ts >> Account Login Tests >> TC_01 Verify that user can navigate to login page @master @sanity @regression
+- Location: tests\accountLogin.spec.ts:26:9
+
+# Error details
+
+```
+Error: page.goto: url: expected string, got undefined
+```
+
+# Test source
+
+```ts
+  1  | import { expect, test } from "@playwright/test";
+  2  | import { HomePage } from "../pages/HomePage";
+  3  | import { LoginPage } from "../pages/LoginPage";
+  4  | import { AccountPage } from "../pages/AccountPage";
+  5  | import { TestConfig } from "../test.config";
+  6  | import { RandomDataUtil } from "../utils/randomDataGenerator";  
+  7  | 
+  8  | 
+  9  | let homePage: HomePage;
+  10 | let loginPage: LoginPage;
+  11 | let accountPage: AccountPage;
+  12 | let testConfig: TestConfig;
+  13 | 
+  14 | 
+  15 | test.beforeEach(async ({page}) => {
+  16 |     homePage = new HomePage(page);
+  17 |     loginPage = new LoginPage(page);
+  18 |     accountPage = new AccountPage(page);
+  19 |     testConfig = new TestConfig();
+  20 | 
+  21 |     await page.waitForLoadState('networkidle');
+> 22 |     await page.goto(testConfig.appUrl);
+     |                ^ Error: page.goto: url: expected string, got undefined
+  23 | });
+  24 | 
+  25 | test.describe("Account Login Tests", () => {
+  26 |     test("TC_01 Verify that user can navigate to login page @master @sanity @regression", async ({}) => {
+  27 |         const isHomePageDisplayed = await homePage.isHomePageDisplayed();
+  28 |         expect(isHomePageDisplayed).toBeTruthy();
+  29 |         await homePage.goToLoginPage();
+  30 |         const isLoginPageDisplayed = await loginPage.isLoginPageDisplayed();
+  31 |         expect(isLoginPageDisplayed).toBeTruthy();
+  32 |     });
+  33 | 
+  34 |     test("TC_02 Verify that user can login with valid credentials @master @sanity @regression", async ({}) => {
+  35 |         const isHomePageDisplayed = await homePage.isHomePageDisplayed();
+  36 |         expect(isHomePageDisplayed).toBeTruthy();
+  37 |         await homePage.goToLoginPage();
+  38 |         let isLoginPageDisplayed = await loginPage.isLoginPageDisplayed();
+  39 |         expect(isLoginPageDisplayed).toBeTruthy();
+  40 |         await loginPage.login(testConfig.email, testConfig.password);
+  41 |         const isAccountPageDisplayed = await accountPage.isAccountPageDisplayed();
+  42 |         expect(isAccountPageDisplayed).toBeTruthy();
+  43 |     });
+  44 | 
+  45 |     test("TC_03 Verify that user cannot login with invalid credentials @master @sanity @regression", async ({}) => {
+  46 |         const isHomePageDisplayed = await homePage.isHomePageDisplayed();
+  47 |         expect(isHomePageDisplayed).toBeTruthy();
+  48 |         await homePage.goToLoginPage();
+  49 |         let isLoginPageDisplayed = await loginPage.isLoginPageDisplayed();
+  50 |         expect(isLoginPageDisplayed).toBeTruthy();
+  51 |         await loginPage.login(RandomDataUtil.generateRandomEmail(), RandomDataUtil.generateRandomPassword());
+  52 |         const isAccountPageDisplayed = await accountPage.isAccountPageDisplayed();
+  53 |         expect(isAccountPageDisplayed).toBeFalsy();
+  54 |     });
+  55 | });
+  56 | 
+  57 | 
+  58 | 
+```
