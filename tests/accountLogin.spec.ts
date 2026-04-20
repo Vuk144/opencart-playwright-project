@@ -40,6 +40,7 @@ test.describe("Account Login Tests", () => {
         await loginPage.login(testConfig.email, testConfig.password);
         //const isAccountPageDisplayed = await accountPage.isAccountPageDisplayed();
         //expect(isAccountPageDisplayed).toBeTruthy();
+        //
     });
 
     test("TC_03 Verify that user cannot login with invalid credentials @master @sanity @regression", async ({}) => {
