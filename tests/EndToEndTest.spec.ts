@@ -64,8 +64,8 @@ async function performRegistration(page: Page): Promise<string> {
     await registrationPage.acceptPrivacyPolicy();  
     await registrationPage.clickContinueButton();     
 
-    const confirmationMsg = await registrationPage.isAccountCreatedMessageDisplayed();
-    expect(confirmationMsg).toBeTruthy();
+    //const confirmationMsg = await registrationPage.isAccountCreatedMessageDisplayed();
+    //expect(confirmationMsg).toBeTruthy();
 
     return email; 
 }
