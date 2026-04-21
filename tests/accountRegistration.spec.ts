@@ -18,7 +18,10 @@ test.describe("Account Registration Tests", () => {
         
     });
 
-    test("TC_01 Verify that user can navigate to registration page @master @sanity @regression", async ({}) => {
+    test("TC_1 Verify that user can navigate to registration page @master @sanity @regression", async ({}) => {
+        // Description: Verify that user can navigate to the registration page from home page
+        // Author: Vuk Nedeljkovic
+        // Date: 04.21.2026
         const isHomePageDisplayed = await homePage.isHomePageDisplayed();
         expect(isHomePageDisplayed).toBeTruthy();
         await homePage.clickMyAccountDropdown();
@@ -28,7 +31,10 @@ test.describe("Account Registration Tests", () => {
         
     });
 
-    test("TC_02 Verify that user can register a new account", async ({}) => {
+    test("TC_2 Verify that user can register a new account", async ({}) => {
+        // Description: Verify that user can successfully register a new account with valid details
+        // Author: Vuk Nedeljkovic
+        // Date: 04.21.2026
         await homePage.isHomePageDisplayed();
         await homePage.clickMyAccountDropdown();
         await homePage.clickRegisterButton();
