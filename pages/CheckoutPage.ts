@@ -50,6 +50,10 @@ export class CheckoutPage {
     }
 
     // Check if checkout page exists
+    /**
+     * Verifies if the checkout page exists by checking page title
+     * @returns Promise<boolean> - Returns true if page title is "Checkout"
+     */
     async isCheckoutPageExists() {
         try {
             await expect(this.page).toHaveTitle("Checkout");
@@ -60,6 +64,11 @@ export class CheckoutPage {
     }
     
     // Choose checkout option
+    /**
+     * Selects the checkout option (Guest or Registered)
+     * @param checkOutOption - The checkout option to select (e.g., "Guest Checkout")
+     * @returns Promise<void>
+     */
     async chooseCheckoutOption(checkOutOption: string){
         if (checkOutOption === "Guest Checkout") {
             await this.radioGuest.click();
@@ -67,79 +76,160 @@ export class CheckoutPage {
     }
 
     // Click on continue button
+    /**
+     * Clicks the Continue button for checkout
+     * @returns Promise<void>
+     */
     async clickOnContinue(){
         await this.btnContinue.click();
     }
 
     // Form field methods
+    /**
+     * Sets the first name in billing address
+     * @param firstName - The first name to enter
+     * @returns Promise<void>
+     */
     async setFirstName(firstName: string){
         await this.txtFirstName.fill(firstName);
     }
 
+    /**
+     * Sets the last name in billing address
+     * @param lastName - The last name to enter
+     * @returns Promise<void>
+     */
     async setLastName(lastName: string){
         await this.txtLastName.fill(lastName);
     }
 
+    /**
+     * Sets the address line 1 in billing address
+     * @param address1 - The first address line to enter
+     * @returns Promise<void>
+     */
     async setAddress1(address1: string) {
         await this.txtAddress1.fill(address1);
     }
 
+    /**
+     * Sets the address line 2 in billing address
+     * @param address2 - The second address line to enter
+     * @returns Promise<void>
+     */
     async setAddress2(address2: string){
         await this.txtAddress2.fill(address2);
     }
 
+    /**
+     * Sets the city in billing address
+     * @param city - The city to enter
+     * @returns Promise<void>
+     */
     async setCity(city: string){
         await this.txtCity.fill(city);
     }
 
+    /**
+     * Sets the postal code/PIN in billing address
+     * @param pin - The postal code to enter
+     * @returns Promise<void>
+     */
     async setPin(pin: string){
         await this.txtPin.fill(pin);
     }
 
+    /**
+     * Selects a country from the country dropdown
+     * @param country - The country name to select
+     * @returns Promise<void>
+     */
     async setCountry(country: string){
         await this.drpCountry.selectOption({ label: country });
     }
 
+    /**
+     * Selects a state/region from the state dropdown
+     * @param state - The state/region name to select
+     * @returns Promise<void>
+     */
     async setState(state: string){
         await this.drpState.selectOption({ label: state });
     }
 
     // Continue button methods
+    /**
+     * Clicks Continue button after billing address entry
+     * @returns Promise<void>
+     */
     async clickOnContinueAfterBillingAddress() {
         await this.btnContinueBillingAddress.click();
     }
 
+    /**
+     * Clicks Continue button after delivery address entry
+     * @returns Promise<void>
+     */
     async clickOnContinueAfterDeliveryAddress() {
         await this.btnContinueDeliveryAddress.click();
     }
 
     // Delivery method
+    /**
+     * Sets the delivery method comment
+     * @param deliveryMsg - The delivery message/comment to enter
+     * @returns Promise<void>
+     */
     async setDeliveryMethodComment(deliveryMsg: string) {
         await this.txtDeliveryMethod.fill(deliveryMsg);
     }
 
+    /**
+     * Clicks Continue button after delivery method selection
+     * @returns Promise<void>
+     */
     async clickOnContinueAfterDeliveryMethod() {
         await this.btnContinueShippingAddress.click();
     }
 
     // Terms and conditions
+    /**
+     * Selects the Terms and Conditions checkbox
+     * @returns Promise<void>
+     */
     async selectTermsAndConditions() {
         await this.chkboxTerms.check();
     }
 
+    /**
+     * Clicks Continue button after payment method selection
+     * @returns Promise<void>
+     */
     async clickOnContinueAfterPaymentMethod() {
         await this.btnContinuePaymentMethod.click();
     }
 
     // Order confirmation
+    /**
+     * Gets the total price before confirming the order
+     * @returns Promise<string | null> - The total price text or null if not found
+     */
     async getTotalPriceBeforeConfOrder() {
         return await this.lblTotalPrice.textContent();
     }
 
+    /**
+     * Clicks the Confirm Order button
+     * @returns Promise<void>
+     */
     async clickOnConfirmOrder() {
         await this.btnConfOrder.click();
     }
 
+    /**
+     * Verifies if the order has been placed successfully
+     * @returns Promise<boolean> - Returns true if order confirmation message is displayed
+     */
     async isOrderPlaced() {
         try {
             // Handle alert if present

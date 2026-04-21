@@ -25,7 +25,10 @@ test.afterEach(async ({ page }) => {
   await page.close(); // Optional cleanup
 });
 
-test('Add product to cart test @master @regression', async ({ page }) => {
+test('TC_1 Verify that user can successfully add a product to cart from search results @master @regression', async ({ page }) => {
+  // Description: Verify that user can successfully add a product to cart from search results
+  // Author: Vuk Nedeljkovic
+  // Date: 04.21.2026
   // Step 2: Enter product name in search box
   await homePage.enterProductName(config.productName);
 

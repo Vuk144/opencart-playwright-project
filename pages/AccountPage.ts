@@ -10,6 +10,10 @@ export class AccountPage {
         this.accountHeader = page.locator("h2", {hasText: "My Account"});
     }
 
+    /**
+     * Verifies if the account page is displayed
+     * @returns Promise<boolean> - Returns true if account header is visible
+     */
     async isAccountPageDisplayed(): Promise<boolean> {
         return await this.accountHeader.isVisible();
     }

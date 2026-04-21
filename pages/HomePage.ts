@@ -25,11 +25,19 @@ export class HomePage {
 
     }
 
+    /**
+     * Verifies if the home page is displayed by checking search input visibility
+     * @returns Promise<boolean> - Returns true if search input is visible
+     */
     async isHomePageDisplayed(): Promise<boolean> {
         await this.page.waitForLoadState('networkidle');
         return await this.txtSearchInput.isVisible();
     }
 
+    /**
+     * Clicks the search button
+     * @returns Promise<void>
+     */
     async clickSearchButton() {
         try {
             await this.btnSearchButton.click();
@@ -39,6 +47,11 @@ export class HomePage {
         }
     }
 
+    /**
+     * Enters search text in the search input field
+     * @param stringProductName - The product name to search for
+     * @returns Promise<void>
+     */
     async enterSearchText(stringProductName: string) {
         try {
             await this.txtSearchInput.fill(stringProductName);
@@ -48,6 +61,10 @@ export class HomePage {
         }
     }
 
+    /**
+     * Clicks on the My Account dropdown menu
+     * @returns Promise<void>
+     */
     async clickMyAccountDropdown() {
         try {
             await this.lnkMyAccount.click();
@@ -58,6 +75,10 @@ export class HomePage {
         }    
     }
 
+    /**
+     * Clicks on the Register button
+     * @returns Promise<void>
+     */
     async clickRegisterButton() {
         try {
             await this.lnkRegister.click();
@@ -66,6 +87,10 @@ export class HomePage {
             throw error; // Rethrow the error after logging it
         }
     }
+    /**
+     * Clicks on the Login button
+     * @returns Promise<void>
+     */
     async clickLoginButton() {
         try {
             await this.lnkLogin.click();
@@ -75,16 +100,29 @@ export class HomePage {
         }
     }
 
+    /**
+     * Navigates to login page by clicking My Account dropdown and Login button
+     * @returns Promise<void>
+     */
     async goToLoginPage() {
         await this.clickMyAccountDropdown();
         await this.clickLoginButton();
     }
 
+    /**
+     * Navigates to registration page by clicking My Account dropdown and Register button
+     * @returns Promise<void>
+     */
     async goToRegistrationPage() {
         await this.clickMyAccountDropdown();
         await this.clickRegisterButton();
     }
 
+    /**
+     * Enters product name in the search field
+     * @param productName - The name of the product to search for
+     * @returns Promise<void>
+     */
     async enterProductName(productName: string) {
         try {
             await this.txtSearchInput.fill(productName);
@@ -93,6 +131,11 @@ export class HomePage {
             throw error; // Rethrow the error after logging it
         }
     }
+    /**
+     * Performs search by entering product name and clicking search button
+     * @param productName - The name of the product to search for
+     * @returns Promise<void>
+     */
     async clickSearch() {
         try {
             await this.btnSearchButton.click();
