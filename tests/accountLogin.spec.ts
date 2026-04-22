@@ -24,9 +24,9 @@ test.beforeEach(async ({page}) => {
 
 test.describe("Account Login Tests", () => {
     test("TC_1 Verify that user can navigate to login page @master @sanity @regression", async ({}) => {
-        // Description: Verify that user can navigate to the login page from home page
-        // Author: Vuk Nedeljkovic
-        // Date: 04.21.2026
+           // Description: Verify that user can navigate to the login page from home page
+           // Author: Vuk Nedeljkovic
+           // Date: 04.22.2026
         const isHomePageDisplayed = await homePage.isHomePageDisplayed();
         expect(isHomePageDisplayed).toBeTruthy();
         await homePage.goToLoginPage();
@@ -35,9 +35,9 @@ test.describe("Account Login Tests", () => {
     });
 
     test("TC_2 Verify that user can login with valid credentials @master @sanity @regression", async ({}) => {
-        // Description: Verify that user can successfully login with valid email and password credentials
-        // Author: Vuk Nedeljkovic
-        // Date: 04.21.2026
+           // Description: Verify that user can successfully login with valid email and password credentials
+           // Author: Vuk Nedeljkovic
+           // Date: 04.22.2026
         const isHomePageDisplayed = await homePage.isHomePageDisplayed();
         expect(isHomePageDisplayed).toBeTruthy();
         await homePage.goToLoginPage();
@@ -50,9 +50,9 @@ test.describe("Account Login Tests", () => {
     });
 
     test("TC_3 Verify that user cannot login with invalid credentials @master @sanity @regression", async ({}) => {
-        // Description: Verify that user cannot login with invalid email and password credentials
-        // Author: Vuk Nedeljkovic
-        // Date: 04.21.2026
+           // Description: Verify that user cannot login with invalid email and password credentials
+           // Author: Vuk Nedeljkovic
+           // Date: 04.22.2026
         const isHomePageDisplayed = await homePage.isHomePageDisplayed();
         expect(isHomePageDisplayed).toBeTruthy();
         await homePage.goToLoginPage();

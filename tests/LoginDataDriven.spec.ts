@@ -15,9 +15,9 @@ const jsonTestData=DataProvider.getTestDataFromJSON(jsonPath);
 for(const data of jsonTestData)
 {
    test(`TC_1 Verify user login with JSON data - ${data.testName} @datadriven`, async({page})=>{
-        // Description: Verify user login with various credentials provided from JSON data
-        // Author: Vuk Nedeljkovic
-        // Date: 04.21.2026
+      // Description: Verify user login with various credentials provided from JSON data
+      // Author: Vuk Nedeljkovic
+      // Date: 04.22.2026
         const config = new TestConfig(); // create instance
         await page.goto(config.appUrl);    // getting appURL from test.config.ts file
 

@@ -27,7 +27,7 @@ test.afterEach(async ({ page }) => {
 test('TC_1 Verify that user can search for a product and find it in the search results @master @regression', async () => {
   // Description: Verify that user can search for a product and find it in the search results
   // Author: Vuk Nedeljkovic
-  // Date: 04.21.2026
+  // Date: 04.22.2026
   const productName = config.productName;
 
 

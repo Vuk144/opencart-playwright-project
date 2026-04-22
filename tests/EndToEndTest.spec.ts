@@ -17,7 +17,7 @@ import { CheckoutPage } from '../pages/CheckoutPage';
 test('TC_1 Execute end-to-end test flow @end-to-end', async ({ page }) => {
     // Description: Execute complete end-to-end test flow including registration, logout, login, product search and cart verification
     // Author: Vuk Nedeljkovic
-    // Date: 04.21.2026
+    // Date: 04.22.2026
     const config = new TestConfig();
 
     await page.goto(config.appUrl);

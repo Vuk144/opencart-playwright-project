@@ -15,6 +15,8 @@ export class RegistrationPage {
     private readonly radioNewsletterYes: Locator;
     private readonly radioNewsletterNo: Locator;
     private readonly msgAccHasBeenCreated: Locator;
+    private readonly textDanger: Locator;
+    private readonly alertDanger: Locator;
     constructor(page: Page) {
         this.page = page;
         this.registerAccountHeader = page.locator("h1");
@@ -31,6 +33,8 @@ export class RegistrationPage {
         this.msgAccHasBeenCreated = page.getByText("Your Account Has Been Created!");
         this.radioNewsletterYes = page.getByLabel("Yes");
         this.radioNewsletterNo = page.getByLabel("No");
+        this.textDanger = page.locator(".text-danger");
+        this.alertDanger = page.locator(".alert-danger");
 
     }
     /**
@@ -133,6 +137,30 @@ export class RegistrationPage {
         } else {
             await this.radioNewsletterNo.check();
         }
+    }
+    /**
+     * Verifies if the email address is already registered error message is displayed
+     * @returns Promise<boolean> - Returns true if search input is visible
+     */
+
+    async emailAddressAlreadyRegistered(): Promise<boolean> {
+        return await this.alertDanger.textContent().then(text => text?.includes('Warning: E-Mail Address is already registered') || false);
+    }
+        /**
+     * Verifies if the password confirmation does not match error message is displayed
+     * @returns Promise<boolean> - Returns true if search input is visible
+     */
+
+
+    async invalidPasswordConfirmationErrorMessageDisplayed(): Promise<boolean> {
+        return await this.textDanger.textContent().then(text => text?.includes('Password confirmation does not match password') || false);
+    }
+    /**
+     * Verifies if the invalid telephone number error message is displayed
+     * @returns Promise<boolean> - Returns true if search input is visible
+     */
+    async invalidTelephoneErrorMessageDisplayed(): Promise<boolean> {
+        return await this.textDanger.textContent().then(text => text?.includes('Telephone must be between 3 and 32 characters!') || false);
     }
 
     /**

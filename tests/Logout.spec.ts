@@ -32,7 +32,7 @@ test.afterEach(async ({page}) => {
 test('TC_1 Verify that user can logout successfully @master @regression', async ({}) => {
     // Description: Verify that user can logout successfully from their account
     // Author: Vuk Nedeljkovic
-    // Date: 04.21.2026
+    // Date: 04.22.2026
     // TODO: Add logout test implementation
     await homePage.goToLoginPage();
     let isLoginPageVisible = await loginPage.isLoginPageDisplayed();
