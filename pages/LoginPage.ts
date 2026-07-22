@@ -70,6 +70,8 @@ export class LoginPage {
         await this.enterEmail(stringEmail);
         await this.enterPassword(stringPassword);
         await this.clickLoginButton();
+
+        await this.page.waitForLoadState("networkidle");
     }
 
     

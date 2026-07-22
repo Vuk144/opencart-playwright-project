@@ -107,6 +107,8 @@ export class HomePage {
     async goToLoginPage() {
         await this.clickMyAccountDropdown();
         await this.clickLoginButton();
+
+        await this.page.waitForLoadState("networkidle");
     }
 
     /**
