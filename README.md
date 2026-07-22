@@ -1,5 +1,11 @@
 # OpenCart Playwright Automation Framework
 
+![GitHub Actions Workflow Status](https://github.com/Vuk144/opencart-playwright-project/actions/workflows/playwright.yml/badge.svg)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Allure](https://img.shields.io/badge/Allure-EE6C4D?style=for-the-badge)
+
 End-to-end UI test automation framework built with **Playwright** and **TypeScript** for the OpenCart e-commerce application.
 
 The project demonstrates modern automation testing practices using a scalable **Page Object Model (POM)** architecture, reusable page objects, data-driven testing, and comprehensive reporting.
