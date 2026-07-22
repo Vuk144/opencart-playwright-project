@@ -2,14 +2,13 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ Vuk-*, master ]
+    branches: [ 'Vuk-*', master ]
   pull_request:
     branches: [ master ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-
 
     steps:
       - name: Checkout repository
@@ -43,4 +42,3 @@ jobs:
         with:
           name: allure-report
           path: allure-report/
-

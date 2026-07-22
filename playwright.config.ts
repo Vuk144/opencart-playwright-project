@@ -21,6 +21,7 @@ export default defineConfig({
     {
     "ngrok-skip-browser-warning": "true"
     },
+    actionTimeout: 10000,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
