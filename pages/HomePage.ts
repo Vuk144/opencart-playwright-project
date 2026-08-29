@@ -8,21 +8,59 @@ export class HomePage {
     private readonly lnkMyAccount: Locator;
     private readonly lnkRegister: Locator;
     private readonly lnkLogin: Locator;
-
-    //private readonly registerBtn : Locator;
-
-
-
+    // New selectors for homepage tests
+    private readonly logo: Locator;
+    private readonly navigation: Locator;
+    private readonly featuredProducts: Locator;
+    private readonly productNames: Locator;
+    private readonly productPrices: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.txtSearchInput = page.locator("input[name='search']");
-        this.btnSearchButton = page.locator(".input-group-btn");
+        this.btnSearchButton = page.locator(".input-group-btn button[type='button']");
         this.lnkMyAccount = page.locator('a[title="My Account"]');
         this.lnkRegister = page.getByRole('link', { name: 'Register' });
         this.lnkLogin = page.getByRole('link', { name: 'Login' });
+        this.logo = page.locator('#logo');
+        this.navigation = page.locator('#menu');
+        this.featuredProducts = page.locator('.product-thumb');
+        this.productNames = page.locator('.product-thumb h4 a');
+        this.productPrices = page.locator('.product-thumb .price');
+    }
+    /**
+     * Checks if the store logo is visible
+     */
+    async isLogoVisible() {
+        return await this.logo.isVisible();
+    }
 
+    /**
+     * Checks if the main navigation is visible
+     */
+    async isNavigationVisible() {
+        return await this.navigation.isVisible();
+    }
 
+    /**
+     * Checks if at least one featured product is visible
+     */
+    async areFeaturedProductsVisible() {
+        return await this.featuredProducts.first().isVisible();
+    }
+
+    /**
+     * Gets all featured product names
+     */
+    async getFeaturedProductNames() {
+        return await this.productNames.allTextContents();
+    }
+
+    /**
+     * Gets all featured product prices
+     */
+    async getFeaturedProductPrices() {
+        return await this.productPrices.allTextContents();
     }
 
     /**
